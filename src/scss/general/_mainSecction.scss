@@ -1,0 +1,68 @@
+article{
+    box-shadow: 8px 8px 24px 0px $primaryColor;
+    height: 165vh;
+    color: white;
+    background-image: url("../../assets/wallpaper.jpg");
+    @include notebook {
+            height: 180vh;
+    }
+    @include mobile{
+        height: 100%;
+    }
+    h1{
+        font-weight: bold;
+    }
+    .first_article{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        @include mobile{
+            flex-direction: column;
+            margin: 0 15px
+        }
+        &:nth-child(2){
+            @include mobile{
+                flex-direction: column-reverse;
+            }
+        }
+        
+        .article_contain{
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+                max-width: 400px;
+                height: 400px;
+                text-align: left;
+
+                h1{
+                    font-size: 45px;
+                    font-family: 'Philosopher', sans-serif;
+                }
+                h2{
+                    font-family: 'Philosopher', sans-serif;
+                }
+            
+        }
+        img{
+            box-shadow: $boxShadowSetting;
+        height: 500px;
+        max-width: 350px;
+        @include mobile{
+            height: 400px;
+        }
+        &:nth-child(1){
+        
+            margin-top:50px
+           
+        }
+        }
+    .article_text{
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+        
+    }
+    }
+}

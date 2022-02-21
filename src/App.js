@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import ReactDOM from 'react-dom';
+import 'reset-css';
+import './scss/main.scss';
+import Header from './component/Header';
+import Nav from './component/Nav'
+import Main from './component/Main'
+import AboutMe from './component/AboutMe'
+import Calendar from './component/Calendary';
+import Footer from './component/Footer';
+import AppView from './component/AppView';
 
-function App() {
+
+
+
+const Index = () => {
+  return(
+    <>
+    <Nav />
+    <Header />     
+    <Main />
+    <AboutMe />
+    <Footer />
+  </>
+  )
+}
+const Termin = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Nav /> 
+      <Calendar />
+  </>
+  )
 }
 
-export default App;
+
+const App = () => {
+  return (
+	<div>
+       <BrowserRouter>
+	   			<Route exact path='/' component={Index} />
+	   			<Route path="/login" exact component={Login} />
+				<Route path="/register" exact component={Register} />
+				<Route path="/dashboard" exact component={Dashboard} />
+				<Route path="/termin" exact component={Termin} />
+		  </BrowserRouter>    
+		</div>
+  )
+}
+ReactDOM.render(
+  <App/>
+  ,
+  document.getElementById('root')
+);
+
+
+
+
+
+
+export default App

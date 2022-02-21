@@ -1,0 +1,90 @@
+
+section{
+
+    height: 90vh;
+    width: 100%;
+    padding-top: 70px;
+    @include notebook{
+        height: 110vh;
+    }
+   
+
+    .section_contain{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       margin-top: 70px;
+       padding: 0 15px;
+       @include notebook{
+           flex-direction: column;
+       }
+    }
+    .section_text{
+        max-width: 700px;
+        font-family: 'Philosopher', sans-serif;
+        color: black;
+        padding-bottom: 20px;
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+       
+        @include notebook{
+            margin-bottom: 15px;
+        }
+        
+        h1{
+            font-size: 35px;
+        }
+        h2{
+            font-size: 25px;
+        }
+        h3{
+            font-size: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+           font-size: 25px;
+           &:hover{
+               color: $primaryColor;
+           }
+           
+        }
+    }
+    img{
+        height: 70vh;
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow:  8px 8px 24px 0px black;
+        @include notebook{
+           
+            height: 55vh;
+            width: 30%;
+        }
+        @include tablet{
+            width: 40%;
+        }
+        @include mobile{
+            height: 20%;
+        }
+    }
+}
+
+footer{
+    height: 75px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('../../assets/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow:  8px 8px 24px 0px black;
+    a{
+        color: black;
+        font-size: 20px;
+        text-decoration: none;
+        font-family: 'Philosopher', sans-serif;
+    }
+}
