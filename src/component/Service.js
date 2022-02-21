@@ -51,6 +51,7 @@ const Service = ( {props, events} ) => {
         
         if (dateChange) {
             alert("Termin jest już zajęty")
+            return 
         }
 
         if(service === "" || hour === ""){
