@@ -66,7 +66,7 @@ const Service = ( {props, events} ) => {
              title: `usługa: ${service}`   
         }
     
-        fetch(`http://localhost:3005/events`, {
+        fetch(`https://be-beauty-pl.herokuapp.com/events`, {
             method: "POST",
             body: JSON.stringify(dataToSend),
             headers: {
