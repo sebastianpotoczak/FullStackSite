@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
-const registerUrl = "http://localhost:3000/#/register"
+const registerUrl = "https://be-beauty-pl.herokuapp.com/register"
 
 const FormApp = () => {
     const[login, setLogin] = useState("");
@@ -22,7 +22,7 @@ const FormApp = () => {
             email: login,
             password: password
     }
-    axios.post('http://localhost:3000/login', request)
+    axios.post('https://be-beauty-pl.herokuapp.com/login', request)
     .then(resp => {
         alert(resp.data.message)
     })

@@ -6,8 +6,8 @@ import App from '../index'
 
 const Nav = () => {
     const[change, setChange] = useState(false);
-    const url = "http://localhost:3000/login"
-    const mainurl = "http://localhost:3000/"
+    const url = "https://be-beauty-pl.herokuapp.com/login"
+    const mainurl = "https://be-beauty-pl.herokuapp.com/"
     
 
     const Tooltip = () => {
@@ -18,7 +18,7 @@ const Nav = () => {
                     
                     <a className="tooltip_nav" href={mainurl}>Strona głowna</a>
                     <a className="tooltip_nav" href={url}>Logowanie</a>
-                    <a className="tooltip_nav" href="http://localhost:3000/termin" >Terminy</a>
+                    <a className="tooltip_nav" href="https://be-beauty-pl.herokuapp.com/termin" >Terminy</a>
                     
                </div>
               
@@ -43,7 +43,7 @@ const Nav = () => {
       <nav>
       <div className="contain">
         <div className="nav_text">
-        <a href="http://localhost:3000/">Be beauty</a>
+        <a href="https://be-beauty-pl.herokuapp.com/">Be beauty</a>
       <label for="check" >
       <input type="checkbox" id="check" onChange={handleClick}/>  
       <span></span>
