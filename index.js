@@ -6,15 +6,6 @@ const User = require('./models/user.model')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-const port = process.env.PORT || 5000;
-
-if(process.env.NODE_ENV === "production"){
-	app.use(express.static('client'));
-	app.get('*', (req,res) => {
-		req.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
-	})
-}
-
 app.use(cors())
 app.use(express.json())
 
