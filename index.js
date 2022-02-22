@@ -6,6 +6,9 @@ const User = require('./models/user.model')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
+
+const PORT = process.env.PORT || 5000
+
 app.use(cors())
 app.use(express.json())
 
@@ -91,6 +94,6 @@ app.post('/api/quote', async (req, res) => {
 	}
 })
 
-app.listen(1337, () => {
-	console.log('Server started on 1337')
+app.listen(PORT, () => {
+	console.log('Server started on ${PORT}')
 })
