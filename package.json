@@ -40,7 +40,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "nodemon index.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
