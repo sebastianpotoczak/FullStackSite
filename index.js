@@ -10,7 +10,10 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect('mongodb://localhost:27017/fullstack-app')
+mongoose.connect(process.env.MONGODB_URL,{
+	useUnifiedTopology: true,
+	useNewUrlParser: true
+}),
 
 app.post('/api/register', async (req, res) => {
 	console.log(req.body)
