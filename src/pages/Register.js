@@ -30,35 +30,34 @@ function App() {
 	}
 
 
-	async function registerUser(event) {
-		event.preventDefault()
-	
-		const response = await fetch('http://localhost:1337/api/register', {
-							   method: 'POST',
-							   headers: {
-								   'Content-Type': 'application/json',
-							   },
-							   body: JSON.stringify({
-								   name,
-								   surname,
-								   phone,
-								   email,
-								   password,	
-							   }),
-						   })
-						   const data = await response.json()
+async function registerUser(event) {
+	event.preventDefault()
 
+	const response = await fetch('http://localhost:1337/api/register', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			name,
+			surname,
+			phone,
+			email,
+			password,	
+		}),
+	})
 
-
-		if(data.status === 'error'){
-			alert("Konto już istnieje!")
-			event.preventDefault()
-		}
-		if (data.status === 'ok') {
-			history.push('/login')
-		}
-		
+	const data = await response.json()
+	if(data.status === 'error'){
+		alert('Ten email juz istnieje')
+		return
 	}
+
+	if (data.status === 'ok') {
+		history.push('/login')
+	}
+}
+
 
 	return (
 		<div className='register_form'>
@@ -129,7 +128,7 @@ function App() {
 		
 
 					<div className='button_content'>
-					<input className='register_submit' type="submit" onClick={registerUser} value="Register" onClick={handleClick} disabled={error} />
+					<input className='register_submit' type="submit" onClick={registerUser} value="Register" />
 				
 					<a className='register_submit' href='http://localhost:3000/login'>Logowanie</a>
 					</div>
