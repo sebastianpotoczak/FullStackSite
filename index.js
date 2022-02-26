@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect(process.env.MONGODB_URL,{
+mongoose.connect('mongodb://localhost:27017/fullstack-app',{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),

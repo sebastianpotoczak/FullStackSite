@@ -1,9 +1,11 @@
 
 const Header = () => {
   const url = "https://be-beauty-pl.herokuapp.com/login"
+
+ 
   return (
     <header>
-     
+  
       <div className="position_header">
       <div className="header_img"> 
       <div className="contain">
@@ -12,6 +14,7 @@ const Header = () => {
           <a href={url} className="header_text">
           Sprawdz terminy już teraz!
           </a>
+         
         </div>
        
       </div> 

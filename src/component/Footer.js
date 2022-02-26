@@ -1,4 +1,5 @@
 const Footer = () => {
+   
     return(
         <footer>
         <a href="#">Ania x beauty</a>
