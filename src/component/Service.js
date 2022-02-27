@@ -7,11 +7,10 @@ const jwt = require('jsonwebtoken')
 const Service = ( {props, events} ) => {
     const[service ,setService] = useState("");
     const[hour, setHour] =useState("")
+  
    
     let color = randomColor();
 
-    let takeName = localStorage.getItem('savedName');
-    let takePhone =localStorage.getItem('savedPhone');
     
 
     const token = localStorage.getItem('token')
@@ -20,7 +19,16 @@ const Service = ( {props, events} ) => {
     const decodedPhone = jwt.verify(phoneToken, 'secret123')  
      const phone = decodedPhone.phones
     const nameDecoded = decoded.name
+    const getSurname = localStorage.getItem('surnameToken')
+    const getAdmin = localStorage.getItem('admin')
+    const adminToken = jwt.verify(getAdmin, 'secret123')  
+    const admin = adminToken.admin
+    const surnameToken = jwt.verify(getSurname, 'secret123')  
+    const surname = surnameToken.surname
  
+
+
+  
 
     const handleClear = e => {
         
@@ -63,7 +71,8 @@ const Service = ( {props, events} ) => {
             color,
              from: `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`,
              to: `${props[1]}-${props[2]}-${props[3]}T${hour}:55:00+00:00`,
-             title: `usługa: ${service}`   
+             title: `usługa: ${service}`,
+             dane: `Imię i nazwisko ${nameDecoded} ${surname}, telefon ${phone}`
         }
     
         fetch(`http://localhost:3005/events`, {

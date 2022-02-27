@@ -21,13 +21,12 @@ function App() {
 
 		const data = await response.json()
 
-	
 		if (data.user) {
 			localStorage.setItem('token', data.user)
 			localStorage.setItem('phoneToken', data.phones)
+			localStorage.setItem('surnameToken', data.surname)
+			localStorage.setItem('admin', data.admin)
 			window.location.href = '/termin'
-		} else {
-			alert('Please check your username and password')
 		}
 	}
 

@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect('mongodb://localhost:27017/fullstack-app',{
+mongoose.connect('mongodb+srv://franky:database987@cluster0.05a6a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
@@ -25,6 +25,7 @@ app.post('/api/register', async (req, res) => {
 			phone: req.body.phone,
 			email: req.body.email,
 			password: newPassword,
+			admin: false
 		})
 		res.json({ status: 'ok' })
 	} catch (err) {
@@ -52,7 +53,6 @@ app.post('/api/login', async (req, res) => {
 			{
 				name: user.name,
 				email: user.email,
-			
 			},
 			'secret123'
 		)
@@ -60,7 +60,14 @@ app.post('/api/login', async (req, res) => {
 			phones: user.phone
 		}, 'secret123')
 
-		return res.json({ status: 'ok', user: token, phones: phone})
+		const surname = jwt.sign({
+			surname: user.surname
+		}, 'secret123')
+		const admin = jwt.sign({
+			admin: user.admin
+		}, 'secret123')
+
+		return res.json({ status: 'ok', user: token, phones: phone, surname: surname, admin: admin})
 	} else {
 		return res.json({ status: 'error', user: false })
 	}

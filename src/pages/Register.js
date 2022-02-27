@@ -12,6 +12,7 @@ function App() {
 	const [password, setPassword] = useState('');
 	const[error,setError] = useState(false)
 	const[validateEmail, setValidateEmail] = useState(false)
+	const[admin,setAdmin] = useState("false")
 
 	const handleEmail = (e) => {
 		const newEmail = e.target.value;
@@ -43,7 +44,8 @@ async function registerUser(event) {
 			surname,
 			phone,
 			email,
-			password,	
+			password,
+			admin	
 		}),
 	})
 
