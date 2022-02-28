@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require("path");
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
@@ -8,14 +9,22 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
-const path = require("path");
+require("dotenv").config({path: "./config.env"})
 
+ 
 const port = process.env.PORT || 1337;
 
+if(process.env.NODE_ENV === "production"){
+	app.use(express.static(path.join(__dirname, "build")));
+	app.get('*', (req, res) => {
+		res.sendFile(path.join(__dirname, "build", "index.html"))
+	});
+}else{
+	app.get('/', (req, res) =>{
+		res.send("Api running")
+	})
+}
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
 
 const middlewares = jsonServer.defaults({
 	static: '/build'

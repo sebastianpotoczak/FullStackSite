@@ -47,6 +47,14 @@
       "title": "usługa: Makijaż weselny",
       "dane": "Imię i nazwisko Bogusląw Potoczak, telefon 123456789",
       "id": 6
+    },
+    {
+      "color": "#0ea06d",
+      "from": "2022-02-23T10:00:00+00:00",
+      "to": "2022-02-23T10:55:00+00:00",
+      "title": "usługa: Makijaż pernamentny",
+      "dane": "Imię i nazwisko Bogusląw Potoczak, telefon 123456789",
+      "id": 7
     }
   ]
 }
