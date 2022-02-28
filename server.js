@@ -8,8 +8,14 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
+const path = require("path");
+
+const port = process.env.PORT || 1337;
 
 
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
 
 const middlewares = jsonServer.defaults({
 	static: '/build'
@@ -135,6 +141,4 @@ app.post('/api/quote', async (req, res) => {
 })
 
 
-app.listen(1337, () => {
-	console.log('Server started on 1337')
-})
+app.listen(port, () => console.log(`Server listening on port ${port}`));
