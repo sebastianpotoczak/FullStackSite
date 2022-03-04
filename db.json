@@ -55,6 +55,86 @@
       "title": "usługa: Makijaż pernamentny",
       "dane": "Imię i nazwisko Bogusląw Potoczak, telefon 123456789",
       "id": 7
+    },
+    {
+      "color": "#8ace3b",
+      "from": "2022-03-02T11:00:00+00:00",
+      "to": "2022-03-02T11:55:00+00:00",
+      "title": "usługa: Makijaż pernamentny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 8
+    },
+    {
+      "color": "#67a7e0",
+      "from": "2022-03-03T19:00:00+00:00",
+      "to": "2022-03-03T19:55:00+00:00",
+      "title": "usługa: Makijaż pernamentny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 9
+    },
+    {
+      "color": "#90edd4",
+      "from": "2022-03-04T11:00:00+00:00",
+      "to": "2022-03-04T11:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 10
+    },
+    {
+      "color": "#39d3a2",
+      "from": "2022-03-23T10:00:00+00:00",
+      "to": "2022-03-23T10:55:00+00:00",
+      "title": "usługa: Makijaż imprezowy",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 11
+    },
+    {
+      "color": "#b28620",
+      "from": "2022-03-23T07:00:00+00:00",
+      "to": "2022-03-23T07:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 12
+    },
+    {
+      "color": "#b74cdb",
+      "from": "2022-03-23T08:00:00+00:00",
+      "to": "2022-03-23T08:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 13
+    },
+    {
+      "color": "#f9e2c0",
+      "from": "2022-03-23T11:00:00+00:00",
+      "to": "2022-03-23T11:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 14
+    },
+    {
+      "color": "#16e059",
+      "from": "2022-03-23T09:00:00+00:00",
+      "to": "2022-03-23T09:55:00+00:00",
+      "title": "usługa: Makijaż imprezowy",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 15
+    },
+    {
+      "color": "#f785ab",
+      "from": "2022-03-16T14:00:00+00:00",
+      "to": "2022-03-16T14:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 16
+    },
+    {
+      "color": "#89f9bd",
+      "from": "2022-03-23T15:00:00+00:00",
+      "to": "2022-03-23T15:55:00+00:00",
+      "title": "usługa: Makijaż weselny",
+      "dane": "Imię i nazwisko Sebastian Potoczak, telefon 123456789",
+      "id": 17
     }
   ]
 }

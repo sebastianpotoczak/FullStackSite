@@ -15,9 +15,9 @@ require("dotenv").config({path: "./config.env"})
 const port = process.env.PORT || 1337;
 
 if(process.env.NODE_ENV === "production"){
-	app.use(express.static(path.join(__dirname, "client/build")));
+	app.use(express.static(path.join(__dirname, "build")));
 	app.get('*', (req, res) => {
-		res.sendFile(path.join(__dirname, "client" , "build", "index.html"))
+		res.sendFile(path.join(__dirname, "build", "index.html"))
 	});
 }else{
 	app.get('/', (req, res) =>{
@@ -27,7 +27,7 @@ if(process.env.NODE_ENV === "production"){
 
 
 const middlewares = jsonServer.defaults({
-	static: 'client/build'
+	static: '/build'
 })
 
 server.use(middlewares);
@@ -53,7 +53,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://franky:database987@cluster0.05a6a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),

@@ -36,8 +36,9 @@ const Service = ( {props, events} ) => {
 
     const handleClear = e => {
         
-        localStorage.clear('savedName');
-        localStorage.clear('savedPhone');
+        localStorage.clear('surname');
+        localStorage.clear('phone');
+        localStorage.clear('nameDecoded');
         window.location.reload()
 
     }
@@ -143,7 +144,7 @@ const Service = ( {props, events} ) => {
             <div className="submit_contain"> 
                 
                 <input type="submit" className="add_service" onClick={handleFormSubmit}></input>
-                <a href="#" onClick={handleClear}>Reset danych osobowych!</a>
+                <a href="#" onClick={handleClear}>Wyloguj</a>
          
             </div>
          
