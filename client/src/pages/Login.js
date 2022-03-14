@@ -1,5 +1,5 @@
 import { useState } from 'react'
-const jwt = require('jsonwebtoken')
+
 
 function App() {
 	const [email, setEmail] = useState('')

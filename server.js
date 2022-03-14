@@ -11,12 +11,16 @@ const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
 require("dotenv").config({path: "./config.env"})
 
- 
+
 const port = process.env.PORT || 1337;
 
 
-}
+app.use(express.static(path.join(__dirname, "client/build")));
 
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
 
 const middlewares = jsonServer.defaults({
 	static: '/build'
@@ -45,7 +49,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect(process.env.PORT || 'mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
@@ -108,38 +112,6 @@ app.post('/api/login', async (req, res) => {
 	}
 })
 
-app.get('/api/quote', async (req, res) => {
-	const token = req.headers['x-access-token']
-
-	try {
-		const decoded = jwt.verify(token, 'secret123')
-		const email = decoded.email
-		const user = await User.findOne({ email: email })
-
-		return res.json({ status: 'ok', quote: user.quote })
-	} catch (error) {
-		console.log(error)
-		res.json({ status: 'error', error: 'invalid token' })
-	}
-})
-
-app.post('/api/quote', async (req, res) => {
-	const token = req.headers['x-access-token']
-
-	try {
-		const decoded = jwt.verify(token, 'secret123')
-		const email = decoded.email
-		await User.updateOne(
-			{ email: email },
-			{ $set: { quote: req.body.quote } }
-		)
-
-		return res.json({ status: 'ok' })
-	} catch (error) {
-		console.log(error)
-		res.json({ status: 'error', error: 'invalid token' })
-	}
-})
 
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
