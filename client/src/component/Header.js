@@ -1,6 +1,6 @@
 
 const Header = () => {
-  const url = "https://be-beauty-pl.herokuapp.com/login"
+  const url = "https://beauty-app-pl.herokuapp.com/login"
 
  
   return (

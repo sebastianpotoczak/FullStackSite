@@ -22,7 +22,7 @@ const FormApp = () => {
             email: login,
             password: password
     }
-    axios.post('https://be-beauty-pl.herokuapp.com/login', request)
+    axios.post('https://beauty-app-pl.herokuapp.com/login', request)
     .then(resp => {
         alert(resp.data.message)
     })
