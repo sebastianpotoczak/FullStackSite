@@ -9,9 +9,15 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
-require("dotenv").config("./.env")
+require("dotenv").config({path: "./config.env"})
 
+dotenv.config();
+const port = process.env.PORT || 1337;
 
+mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+	useUnifiedTopology: true,
+	useNewUrlParser: true
+}),
 
 
 app.use(express.static(path.join(__dirname, "client/build")))
@@ -116,4 +122,4 @@ app.post('/api/login', async (req, res) => {
 
 
 
-app.listen(process.env.PORT || 2337, () => console.log(`Server listening on port ${port}`));
+app.listen(port || 2337, () => console.log(`Server listening on port ${port}`));
