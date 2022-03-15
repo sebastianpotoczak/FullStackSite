@@ -9,16 +9,16 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
-require("dotenv").config({path: "./.env"})
+require("dotenv").config("./.env")
 
 
 
 
-app.use(express.static(path.join(__dirname, "./client/build")))
+app.use(express.static(path.join(__dirname, "client/build")))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 
