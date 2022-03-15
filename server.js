@@ -12,8 +12,6 @@ const router = jsonServer.router('db.json')
 require("dotenv").config({path: "./.env"})
 
 
-const port = process.env.PORT || 1337;
-
 
 const middlewares = jsonServer.defaults({
 	static: '/build'
@@ -23,6 +21,7 @@ server.use(middlewares);
 server.use(jsonServer.rewriter({
 	"/events/*": '/$1'
 }))
+
 server.use(router)
 
 
@@ -106,7 +105,7 @@ app.post('/api/login', async (req, res) => {
 })
 
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "/client")));
 
 
 app.get('*', (req, res) => {
@@ -115,4 +114,4 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(process.env.PORT || 2337, () => console.log(`Server listening on port ${port}`));
