@@ -13,6 +13,16 @@ require("dotenv").config({path: "./.env"})
 
 
 
+
+app.use(express.static(path.join(__dirname, "client/build")))
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
+
+
 const middlewares = jsonServer.defaults({
 	static: '/build'
 })
@@ -103,14 +113,6 @@ app.post('/api/login', async (req, res) => {
 		return res.json({ status: 'error', user: false })
 	}
 })
-
-
-app.use(express.static(path.join(__dirname, "/client/build")))
-
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
-});
 
 
 
