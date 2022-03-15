@@ -12,12 +12,9 @@ const router = jsonServer.router('db.json')
 require("dotenv").config({path: "./config.env"})
 
 
+
 const port = process.env.PORT || 2337;
 
-mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
-	useUnifiedTopology: true,
-	useNewUrlParser: true
-}),
 
 
 app.use(express.static(path.join(__dirname, "/client/build")))
@@ -56,8 +53,7 @@ server.use((req, res, next) => {
 app.use(cors())
 app.use(express.json())
 
-
-mongoose.connect(process.env.MONGO_URL,{
+mongoose.connect("mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
@@ -122,4 +118,4 @@ app.post('/api/login', async (req, res) => {
 
 
 
-app.listen(port || 2337, () => console.log(`Server listening on port ${port}`));
+app.listen(port, () => console.log(`Server listening on port ${port}`));
