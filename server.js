@@ -11,8 +11,8 @@ const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
 require("dotenv").config({path: "./config.env"})
 
-dotenv.config();
-const port = process.env.PORT || 1337;
+
+const port = process.env.PORT || 2337;
 
 mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
 	useUnifiedTopology: true,
@@ -20,11 +20,11 @@ mongoose.connect('mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net
 }),
 
 
-app.use(express.static(path.join(__dirname, "client/build")))
+app.use(express.static(path.join(__dirname, "/client/build")))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
 });
 
 
