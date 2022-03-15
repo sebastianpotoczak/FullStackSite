@@ -132,7 +132,7 @@ async function registerUser(event) {
 					<div className='button_content'>
 					<input className='register_submit' type="submit" onClick={registerUser} value="Register" />
 				
-					<a className='register_submit' href='http://localhost:3000/login'>Logowanie</a>
+					<a className='register_submit' href='https://beauty-app-pl.herokuapp.com/login'>Logowanie</a>
 					</div>
 				
 				
