@@ -80,7 +80,7 @@ const Service = ( {props, events} ) => {
              dane: `Imię i nazwisko ${nameDecoded} ${surname}, telefon ${phone}`
         }
     
-        fetch(`https://beauty-app-pl.herokuapp.com/events`, {
+        fetch(`https://beauty-app-pl.herokuapp.com/api/events`, {
             method: "POST",
             body: JSON.stringify(dataToSend),
             headers: {

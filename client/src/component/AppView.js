@@ -20,7 +20,7 @@ const AppView = () =>{
         
 
     useEffect(() => {
-        fetch("https://beauty-app-pl.herokuapp.com/events")
+        fetch("https://beauty-app-pl.herokuapp.com/api/events")
         .then(response => {
             if (response.ok) {
                return response.json();

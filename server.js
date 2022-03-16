@@ -133,8 +133,6 @@ const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
 require("dotenv").config()
 
- 
-const port = process.env.PORT || 1337;
 
 
 
@@ -238,4 +236,4 @@ app.post('/api/login', async (req, res) => {
 })
 
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(process.env.PORT || 1337, () => console.log(`Server listening on port ${port}`));
