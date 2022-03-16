@@ -131,7 +131,9 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
-require("dotenv").config()
+require("dotenv").config({path: "./config.env"})
+
+ 
 
 
 
@@ -172,7 +174,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect("mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGO_URI || "mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
