@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Dashboard from './pages/Dashboard'
 import ReactDOM from 'react-dom';
 import 'reset-css';
 import './scss/main.scss';
@@ -12,7 +11,7 @@ import Main from './component/Main'
 import AboutMe from './component/AboutMe'
 import Calendar from './component/Calendary';
 import Footer from './component/Footer';
-import AppView from './component/AppView';
+
 
 
 
@@ -45,7 +44,6 @@ const App = () => {
 	   			<Route exact path='/' component={Index} />
 	   			<Route path="/login" exact component={Login} />
 				<Route path="/register" exact component={Register} />
-				<Route path="/dashboard" exact component={Dashboard} />
 				<Route path="/termin" exact component={Termin} />
 		  </BrowserRouter>    
 		</div>

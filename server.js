@@ -131,7 +131,7 @@ const bcrypt = require('bcryptjs')
 const jsonServer = require('json-server')
 const server =  jsonServer.create();
 const router = jsonServer.router('db.json')
-require("dotenv").config({path: "./config.env"})
+require("dotenv").config()
 
  
 const port = process.env.PORT || 1337;
@@ -174,7 +174,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect(process.env.MONGO_URI || "mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
@@ -234,39 +234,6 @@ app.post('/api/login', async (req, res) => {
 		return res.json({ status: 'ok', user: token, phones: phone, surname: surname, admin: admin})
 	} else {
 		return res.json({ status: 'error', user: false })
-	}
-})
-
-app.get('/api/quote', async (req, res) => {
-	const token = req.headers['x-access-token']
-
-	try {
-		const decoded = jwt.verify(token, 'secret123')
-		const email = decoded.email
-		const user = await User.findOne({ email: email })
-
-		return res.json({ status: 'ok', quote: user.quote })
-	} catch (error) {
-		console.log(error)
-		res.json({ status: 'error', error: 'invalid token' })
-	}
-})
-
-app.post('/api/quote', async (req, res) => {
-	const token = req.headers['x-access-token']
-
-	try {
-		const decoded = jwt.verify(token, 'secret123')
-		const email = decoded.email
-		await User.updateOne(
-			{ email: email },
-			{ $set: { quote: req.body.quote } }
-		)
-
-		return res.json({ status: 'ok' })
-	} catch (error) {
-		console.log(error)
-		res.json({ status: 'error', error: 'invalid token' })
 	}
 })
 
