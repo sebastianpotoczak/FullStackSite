@@ -171,7 +171,7 @@ app.use(cors())
 app.use(express.json())
 
 
-mongoose.connect("mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGODB_URL || "mongodb+srv://sebastian:database123@cluster0.h7hnw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 	useUnifiedTopology: true,
 	useNewUrlParser: true
 }),
