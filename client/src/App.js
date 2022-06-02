@@ -1,18 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Login from './pages/Login'
 import Register from './pages/Register'
 import ReactDOM from 'react-dom';
-import 'reset-css';
-import './scss/main.scss';
+import './style/main.less';
 import Header from './component/Header';
 import Nav from './component/Nav'
 import Main from './component/Main'
 import AboutMe from './component/AboutMe'
 import Calendar from './component/Calendary';
 import Footer from './component/Footer';
-
-
+import NewLogin from './pages/NewLogin';
+import 'antd/dist/antd.css';
 
 
 
@@ -42,7 +40,7 @@ const App = () => {
 	<div>
        <BrowserRouter>
 	   			<Route exact path='/' component={Index} />
-	   			<Route path="/login" exact component={Login} />
+	   			<Route path="/login" exact component={NewLogin} />
 				<Route path="/register" exact component={Register} />
 				<Route path="/termin" exact component={Termin} />
 		  </BrowserRouter>    

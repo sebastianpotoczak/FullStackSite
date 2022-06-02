@@ -1,14 +1,12 @@
 const Footer = () => {
-   
-    return(
-        <footer>
-        <div>
+  return (
+    <footer>
+      <div>
         <a href="#">Ania x beauty</a>
-        <a href="http:www.instagram.com" >Instagram</a>
-        </div>
+        <a href="http:www.instagram.com">Instagram</a>
+      </div>
     </footer>
-    )
-}
+  );
+};
 
-
-export default Footer
+export default Footer;

@@ -4,7 +4,7 @@ section{
     height: 90vh;
     width: 100%;
     padding-top: 70px;
-    @include notebook{
+    .media-desktop notebook{
         height: 110vh;
     }
    
@@ -15,7 +15,7 @@ section{
         align-items: center;
        margin-top: 70px;
        padding: 0 15px;
-       @include notebook{
+     .media-desktop notebook{
            flex-direction: column;
        }
     }
@@ -27,7 +27,7 @@ section{
         border-right: 2px solid black;
         border-bottom: 2px solid black;
        
-        @include notebook{
+        .media-desktop{
             margin-bottom: 15px;
         }
         
@@ -45,7 +45,7 @@ section{
             color: black;
            font-size: 25px;
            &:hover{
-               color: $primaryColor;
+               color: pink;
            }
            
         }
@@ -57,15 +57,15 @@ section{
         justify-content: center;
         align-items: center;
         box-shadow:  8px 8px 24px 0px black;
-        @include notebook{
+        .media-desktop{
            
             height: 55vh;
             width: 30%;
         }
-        @include tablet{
+        .media-tablet{
             width: 40%;
         }
-        @include mobile{
+        .media-phone{
             height: 20%;
         }
     }
@@ -74,7 +74,7 @@ section{
 footer{
     height: 75px;
     width: 100%;
-    background-image: url('../../assets/wallpaper.jpg');
+    background-image: url('../assets/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     box-shadow:  8px 8px 24px 0px black;
