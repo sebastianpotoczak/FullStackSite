@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Register from './pages/Register'
 import ReactDOM from 'react-dom';
-import './style/main.less';
+import './style/main';
 import Header from './component/Header';
 import Nav from './component/Nav'
 import Main from './component/Main'
@@ -11,8 +11,6 @@ import Calendar from './component/Calendary';
 import Footer from './component/Footer';
 import NewLogin from './pages/NewLogin';
 import 'antd/dist/antd.css';
-
-
 
 const Index = () => {
   return(
