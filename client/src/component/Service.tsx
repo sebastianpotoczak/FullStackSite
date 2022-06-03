@@ -1,12 +1,16 @@
 import { useState } from "react";
-import randomColor from "randomcolor";
 const jwt = require("jsonwebtoken");
 
-const Service = ({ props, events }) => {
-  const [service, setService] = useState("");
-  const [hour, setHour] = useState("");
+interface Info {
+  props: string[],
+  events: string
+}
 
-  let color = randomColor();
+const Service: React.FC<Info> = ( props, events ) => {
+  const [service, setService] = useState<string>("");
+  const [hour, setHour] = useState<string>("");
+
+  // let color = randomColor();
 
   const token = localStorage.getItem("token");
   const decoded = jwt.verify(token, "secret123");
@@ -21,27 +25,28 @@ const Service = ({ props, events }) => {
   const surnameToken = jwt.verify(getSurname, "secret123");
   const surname = surnameToken.surname;
 
-  const handleClear = (e) => {
-    localStorage.clear("surname");
-    localStorage.clear("phone");
-    localStorage.clear("nameDecoded");
-    window.location.reload();
-  };
+  // const handleClear = (e: React.MouseEvent<HTMLElement>) => {
+  //   localStorage.clear("surname");
+  //   localStorage.clear("phone");
+  //   localStorage.clear("nameDecoded");
+  //   window.location.reload();
+  // };
 
-  const services = (e) => {
-    const newService = e.target.value;
-    setService(newService);
-  };
+  // const services = (e: ) => {
+  //   const newService = e.target.value;
+  //   setService(newService);
+  // };
 
-  const handleHour = (e) => {
-    const newHour = e.target.value;
-    setHour(newHour);
-  };
+  // const handleHour = (e) => {
+  //   const newHour = e.target.value;
+  //   setHour(newHour);
+  // };
 
   const handleFormSubmit = () => {
     const dateChange = events.find(
-      (el) =>
-        el.from === `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`
+      (el: any) =>
+      console.log(el)
+        // el.from === `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`
     );
 
     if (dateChange) {
@@ -54,11 +59,11 @@ const Service = ({ props, events }) => {
     } else {
       window.location.reload();
       const dataToSend = {
-        color,
-        from: `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`,
-        to: `${props[1]}-${props[2]}-${props[3]}T${hour}:55:00+00:00`,
-        title: `usługa: ${service}`,
-        dane: `Imię i nazwisko ${nameDecoded} ${surname}, telefon ${phone}`,
+        // color,
+        // from: `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`,
+        // to: `${props[1]}-${props[2]}-${props[3]}T${hour}:55:00+00:00`,
+        // title: `usługa: ${service}`,
+        // dane: `Imię i nazwisko ${nameDecoded} ${surname}, telefon ${phone}`,
       };
 
       fetch(`http://localhost:3005/termin`, {
@@ -80,7 +85,7 @@ const Service = ({ props, events }) => {
   return (
     <>
       <div className="service_contain">
-        <div className="contain">
+        {/* <div className="contain">
           <div className="service_position">
             <div>
               <h1>Witaj {nameDecoded}!</h1>
@@ -123,13 +128,13 @@ const Service = ({ props, events }) => {
                   className="add_service"
                   onClick={handleFormSubmit}
                 ></input>
-                <a href="#" onClick={handleClear}>
+                <a href="/" onClick={handleClear}>
                   Wyloguj
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

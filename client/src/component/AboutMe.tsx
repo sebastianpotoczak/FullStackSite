@@ -1,8 +1,6 @@
-import photoSection from "../assets/Header.jpeg";
-import { Button } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
+import photoSection from "./../assets/Header.jpeg";
 
-const AboutMe = () => {
+const AboutMe: React.FC = () => {
   return (
     <>
       <section>
@@ -29,7 +27,7 @@ const AboutMe = () => {
               <br></br>
               <br></br>
               <div className="contact_section" id="contact">
-                <a href="tel:+496170961709" class="Blondie">
+                <a href="tel:+496170961709" className="Blondie">
                   tel: 123456789
                 </a>
                 <br></br>

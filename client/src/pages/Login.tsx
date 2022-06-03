@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 
-function App() {
+const App: React.FC = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	async function loginUser(event) {
+	async function loginUser(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault()
 
 		const response = await fetch('https://localhost:3000/api/login', {

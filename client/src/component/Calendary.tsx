@@ -1,7 +1,7 @@
 import AppView from "./AppView";
 const jwt = require("jsonwebtoken");
 
-const Calendar = () => {
+const Calendar: React.FC = () => {
   return (
     <>
       <AppView />

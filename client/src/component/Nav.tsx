@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Nav = () => {
-  const [change, setChange] = useState(false);
+const Nav: React.FC = () => {
+  const [change, setChange] = useState<boolean>(false);
   const url = "https://beauty-app-pl.herokuapp.com/login";
   const mainurl = "https://beauty-app-pl.herokuapp.com/";
 
@@ -24,17 +24,15 @@ const Nav = () => {
         </div>
       );
     } else {
-      return <> </>;
+      return <></>;
     }
   };
   const handleClick = () => {
-    setChange((prevState) => {
-      if (prevState === false) {
-        setChange(true);
-      } else {
-        setChange(false);
-      }
-    });
+    if (change === false) {
+      setChange(true);
+    } else {
+      setChange(false);
+    }
   };
   return (
     <>
@@ -42,7 +40,7 @@ const Nav = () => {
         <div className="contain">
           <div className="nav_text">
             <a href="https://beauty-app-pl.herokuapp.com/">Be beauty</a>
-            <label for="check">
+            <label form="check">
               <input type="checkbox" id="check" onChange={handleClick} />
               <span className="span"></span>
               <span className="span"></span>

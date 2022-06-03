@@ -1,4 +1,4 @@
-const Header = () => {
+const Header: React.FC = () => {
   const url = "https://beauty-app-pl.herokuapp.com/login";
 
   return (

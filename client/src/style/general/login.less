@@ -12,7 +12,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url("../assets/vase.jpg");
     background-size: cover;
     .ant-form-item-required {
       display: flex;
@@ -23,9 +22,19 @@
     }
     .login_button {
       width: 150px;
+      background-color: #9878A1;
+      border: 1px solid black;
+      &:hover{
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+      }
     }
     .login_input{
-      border:1px solid black
+      border:1px solid black;
+      &:hover{
+        border-color: #9878A1;
+      }
     }
     .ant-form-item-control{
       align-items: center;
@@ -37,6 +46,15 @@
     }
     .ant-col-8{
       flex: 0 0 20% ;
+    }
+    .ant-form-item{
+      width: 300px;
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+    }
+    .ant-form-item-label{
+      margin-right: 15px;
     }
 }
 

@@ -138,21 +138,12 @@ const AppView = () => {
     }
   };
 
-  if (localStorage.getItem("token") === null) {
-    return (
-      <>    
-      <div className="login_content">
-        <NewLogin /> 
-      </div>
-      </>
-    );
-  } else {
+
     return (
       <>
         <Calendary />
       </>
-    );
-  }
+    )
 };
 
 export default AppView;

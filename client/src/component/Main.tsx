@@ -1,9 +1,9 @@
 import React from "react";
-import thirdPhoto from "../assets/kwiatek.jpeg";
-import secondPhoto from "../assets/2photo.jpg";
-import firstPhoto from "../assets/vase.jpg";
+import thirdPhoto from "./../assets/kwiatek.jpeg";
+import secondPhoto from "./../assets/2photo.jpg";
+import firstPhoto from "./../assets/vase.jpg";
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <>
       <article>
@@ -33,7 +33,7 @@ const Main = () => {
                 </h2>
               </div>
             </div>
-            <img src={secondPhoto} alt="White room" />
+            <img src={firstPhoto} alt="White room" />
           </div>
           <div className="first_article">
             <img alt="Plant" src={thirdPhoto} />
