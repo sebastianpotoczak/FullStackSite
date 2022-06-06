@@ -10,7 +10,7 @@ const AboutMe: React.FC = () => {
               <h1>about the studio</h1>
               <br></br>
               <br></br>
-              <h2>Welcome friend.</h2>          
+              <h2>Welcome friend.</h2>
               <br></br>
               <br></br>
               <h3>

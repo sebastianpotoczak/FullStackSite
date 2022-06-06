@@ -2,11 +2,11 @@ import { useState } from "react";
 const jwt = require("jsonwebtoken");
 
 interface Info {
-  props: string[],
-  events: string
+  props: string[];
+  events: string;
 }
 
-const Service: React.FC<Info> = ( props, events ) => {
+const Service: React.FC<Info> = (props, events) => {
   const [service, setService] = useState<string>("");
   const [hour, setHour] = useState<string>("");
 
@@ -44,9 +44,8 @@ const Service: React.FC<Info> = ( props, events ) => {
 
   const handleFormSubmit = () => {
     const dateChange = events.find(
-      (el: any) =>
-      console.log(el)
-        // el.from === `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`
+      (el: any) => console.log(el)
+      // el.from === `${props[1]}-${props[2]}-${props[3]}T${hour}:00:00+00:00`
     );
 
     if (dateChange) {

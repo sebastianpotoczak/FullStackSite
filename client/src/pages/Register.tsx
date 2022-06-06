@@ -11,7 +11,16 @@ const Register: React.FC = () => {
   const [secondPassword, setSecondPassword] = useState<string>("");
 
   const onFinish = (values: string) => {
-    console.log("Success:", email,name,surname,phone,password,setPassword);
+    console.log(
+      "Success:",
+      email,
+      name,
+      surname,
+      phone,
+      password,
+      setPassword,
+      secondPassword
+    );
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -22,7 +31,7 @@ const Register: React.FC = () => {
     <Form
       name="basic"
       labelCol={{
-        span: 8,
+        span: 9,
       }}
       wrapperCol={{
         span: 16,
@@ -78,7 +87,12 @@ const Register: React.FC = () => {
           },
         ]}
       >
-        <Input className="register_input" />
+        <Input
+          className="register_input"
+          onChange={(e: React.FormEvent<HTMLInputElement>) => {
+            setSurname(e.currentTarget.value);
+          }}
+        />
       </Form.Item>
       <Form.Item
         label="Telefon"

@@ -7,8 +7,8 @@ const NewLogin: React.FC = () => {
   const [password, setPassword] = useState<string>("");
 
   const onFinishFailed = () => {
-    console.log("FAIL!")
-  }
+    console.log("FAIL!");
+  };
 
   async function loginUser(event: React.MouseEvent<HTMLElement>) {
     event.preventDefault();
@@ -62,11 +62,12 @@ const NewLogin: React.FC = () => {
           },
         ]}
       >
-        <Input size="middle"
+        <Input
+          size="middle"
           className="login_input"
           onChange={(e: React.FormEvent<HTMLInputElement>) => {
             setEmail(e.currentTarget.value);
-            console.log(email)
+            console.log(email);
           }}
         />
       </Form.Item>
@@ -84,7 +85,7 @@ const NewLogin: React.FC = () => {
           className="login_input"
           onChange={(e: React.FormEvent<HTMLInputElement>) => {
             setPassword(e.currentTarget.value);
-            console.log(password)
+            console.log(password);
           }}
         />
       </Form.Item>
@@ -94,11 +95,7 @@ const NewLogin: React.FC = () => {
           span: 16,
         }}
       >
-        <Button
-          className="login_button"
-          type="primary"
-          htmlType="submit"
-        >
+        <Button className="login_button" type="primary" htmlType="submit">
           Zaloguj!
         </Button>
       </Form.Item>

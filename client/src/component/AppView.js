@@ -1,7 +1,6 @@
 import CalendarAwesome from "react-awesome-calendar";
 import { useState, useEffect } from "react";
 import Service from "./Service";
-import React from "react";
 import NewLogin from "../pages/NewLogin";
 
 const jwt = require("jsonwebtoken");
@@ -78,7 +77,6 @@ const AppView = () => {
       if (month.innerText === "January") {
         setMonths("01");
       }
-
       if (days.innerText === "1") {
         setNumber(`01`);
       }
@@ -138,12 +136,21 @@ const AppView = () => {
     }
   };
 
-
+  if (localStorage.getItem("token") === null) {
+    return (
+      <>
+        <div className="login_content">
+          <NewLogin />
+        </div>
+      </>
+    );
+  } else {
     return (
       <>
         <Calendary />
       </>
-    )
+    );
+  }
 };
 
 export default AppView;

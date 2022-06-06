@@ -5,56 +5,55 @@
   align-items: center;
   justify-content: center;
 }
-  form {
-    width: 100%;
-    height: 100vh;
+form {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  .ant-form-item-required {
     display: flex;
+    flex-direction: row;
+  }
+  .ant-form-item-control-input {
+    width: 200px;
+  }
+  .login_button {
+    width: 150px;
+    background-color: #9878a1;
+    border: 1px solid black;
+    &:hover {
+      background-color: white;
+      border: 1px solid black;
+      color: black;
+    }
+  }
+  .login_input {
+    border: 1px solid black;
+    &:hover {
+      border-color: #9878a1;
+    }
+  }
+  .ant-form-item-control {
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background-size: cover;
-    .ant-form-item-required {
-      display: flex;
-      flex-direction: row;
-    }
-    .ant-form-item-control-input {
-      width: 200px;
-    }
-    .login_button {
-      width: 150px;
-      background-color: #9878A1;
-      border: 1px solid black;
-      &:hover{
-        background-color: white;
-        border: 1px solid black;
-        color: black;
-      }
-    }
-    .login_input{
-      border:1px solid black;
-      &:hover{
-        border-color: #9878A1;
-      }
-    }
-    .ant-form-item-control{
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
-    .ant-form-item-control{
-      margin-right: 15px;
-    }
-    .ant-col-8{
-      flex: 0 0 20% ;
-    }
-    .ant-form-item{
-      width: 300px;
-      display: flex;
-      align-items: center;
-      margin-right: 40px;
-    }
-    .ant-form-item-label{
-      margin-right: 15px;
-    }
+    display: flex;
+  }
+  .ant-form-item-control {
+    margin-right: 15px;
+  }
+  .ant-col-8 {
+    flex: 0 0 20%;
+  }
+  .ant-form-item {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+  }
+  .ant-form-item-label {
+    margin-right: 15px;
+  }
 }
-
