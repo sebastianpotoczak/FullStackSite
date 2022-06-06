@@ -6,12 +6,9 @@ import Header from "./component/Header";
 import Nav from "./component/Nav";
 import Main from "./component/Main";
 import AboutMe from "./component/AboutMe";
-import Calendar from "./component/Calendary";
 import Footer from "./component/Footer";
 import NewLogin from "./pages/NewLogin";
 import "antd/dist/antd.css";
-import AppView from "./component/AppView";
-import FullCalendar from "@fullcalendar/react";
 import DemoApp from "./pages/FullCalendar";
 
 const Index: React.FC = () => {
@@ -29,7 +26,6 @@ const Termin: React.FC = () => {
   return (
     <>
       <Nav />
-      <Calendar />
     </>
   );
 };
