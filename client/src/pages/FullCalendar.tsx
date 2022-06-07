@@ -56,6 +56,15 @@ const DemoApp: React.FC = () => {
     setEvent(e.currentTarget.value);
   };
 
+  const hoverEvent = (data: any) =>{
+     const deleteItem =  data.event._def.publicId
+        events.map((el:any) => {
+           if(el.id === deleteItem){
+              console.log(deleteItem ,"|||||||", el.id)
+           }
+        })
+  }
+
   return (
     <>
       <div className="nav_calendary">
@@ -93,6 +102,8 @@ const DemoApp: React.FC = () => {
         eventBackgroundColor={color}
         initialView={display}
         dayMaxEventRows={true}
+        eventMouseEnter={hoverEvent}
+
       />
     </>
   );
