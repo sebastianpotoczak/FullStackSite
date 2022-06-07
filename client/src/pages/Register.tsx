@@ -30,12 +30,6 @@ const Register: React.FC = () => {
   return (
     <Form
       name="basic"
-      labelCol={{
-        span: 9,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
       initialValues={{
         remember: true,
       }}
@@ -129,7 +123,7 @@ const Register: React.FC = () => {
         />
       </Form.Item>
       <Form.Item
-        label="Hasło"
+        label="Powtórz hasło"
         name="semipassword"
         rules={[
           {
@@ -163,7 +157,7 @@ const Register: React.FC = () => {
       >
         <Button
           className="login_button"
-          href="http://localhost:3000/termin"
+          href="http://localhost:3000/login"
           type="primary"
         >
           Masz już konto?

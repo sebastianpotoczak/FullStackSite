@@ -9,8 +9,7 @@ import AboutMe from "./component/AboutMe";
 import Footer from "./component/Footer";
 import NewLogin from "./pages/NewLogin";
 import "antd/dist/antd.css";
-import DemoApp from "./pages/FullCalendar";
-
+import CalendaryView from "./component/CalendaryView";
 const Index: React.FC = () => {
   return (
     <>
@@ -22,13 +21,7 @@ const Index: React.FC = () => {
     </>
   );
 };
-const Termin: React.FC = () => {
-  return (
-    <>
-      <Nav />
-    </>
-  );
-};
+
 
 const App: React.FC = () => {
   return (
@@ -37,8 +30,7 @@ const App: React.FC = () => {
         <Route exact path="/" component={Index} />
         <Route path="/login" exact component={NewLogin} />
         <Route path="/register" exact component={Register} />
-        <Route path="/termin" exact component={Termin} />
-        <Route path="/calendary" exact component={DemoApp} />
+        <Route path="/calendary" exact component={CalendaryView} />
       </BrowserRouter>
     </div>
   );
